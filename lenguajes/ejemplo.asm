@@ -1,0 +1,72 @@
+a.out:
+(__TEXT,__text) section
+start:
+0000000100000e20	pushq	$0
+0000000100000e22	movq	%rsp, %rbp
+0000000100000e25	andq	$-16, %rsp
+0000000100000e29	movq	8(%rbp), %rdi
+0000000100000e2d	leaq	16(%rbp), %rsi
+0000000100000e31	movl	%edi, %edx
+0000000100000e33	addl	$1, %edx
+0000000100000e36	shll	$3, %edx
+0000000100000e39	addq	%rsi, %rdx
+0000000100000e3c	movq	%rdx, %rcx
+0000000100000e3f	jmp	0x100000e45
+0000000100000e41	addq	$8, %rcx
+0000000100000e45	cmpq	$0, (%rcx)
+0000000100000e49	jne	0x100000e41
+0000000100000e4b	addq	$8, %rcx
+0000000100000e4f	callq	_main
+0000000100000e54	movl	%eax, %edi
+0000000100000e56	callq	0x100000f0a ## symbol stub for: _exit
+0000000100000e5b	hlt
+0000000100000e5c	nop
+0000000100000e5d	nop
+0000000100000e5e	nop
+0000000100000e5f	nop
+_main:
+0000000100000e60	pushq	%rbp
+0000000100000e61	movq	%rsp, %rbp
+0000000100000e64	subq	$80, %rsp
+0000000100000e68	movq	_C.0.1894(%rip), %rax
+0000000100000e6f	movq	%rax, -48(%rbp)
+0000000100000e73	movq	478(%rip), %rax
+0000000100000e7a	movq	%rax, -40(%rbp)
+0000000100000e7e	movq	475(%rip), %rax
+0000000100000e85	movq	%rax, -32(%rbp)
+0000000100000e89	movq	472(%rip), %rax
+0000000100000e90	movq	%rax, -24(%rbp)
+0000000100000e94	movq	469(%rip), %rax
+0000000100000e9b	movq	%rax, -16(%rbp)
+0000000100000e9f	movl	$0, -52(%rbp)
+0000000100000ea6	jmp	0x100000ee3
+0000000100000ea8	movl	-52(%rbp), %eax
+0000000100000eab	movslq	%eax, %rax
+0000000100000eae	movq	-48(%rbp,%rax,8), %rax
+0000000100000eb3	movq	%rax, -64(%rbp)
+0000000100000eb7	movl	-52(%rbp), %eax
+0000000100000eba	movq	-64(%rbp), %rcx
+0000000100000ebe	xorb	%dl, %dl
+0000000100000ec0	leaq	142(%rip), %rsi ## literal pool for: Nº %i - %s
+
+0000000100000ec7	movq	%rsi, %rdi
+0000000100000eca	movl	%eax, %esi
+0000000100000ecc	movb	%dl, -65(%rbp)
+0000000100000ecf	movq	%rcx, %rdx
+0000000100000ed2	movb	-65(%rbp), %al
+0000000100000ed5	callq	0x100000f10 ## symbol stub for: _printf
+0000000100000eda	movl	-52(%rbp), %eax
+0000000100000edd	addl	$1, %eax
+0000000100000ee0	movl	%eax, -52(%rbp)
+0000000100000ee3	movl	-52(%rbp), %eax
+0000000100000ee6	movslq	%eax, %rax
+0000000100000ee9	movq	-48(%rbp,%rax,8), %rax
+0000000100000eee	cmpq	$0, %rax
+0000000100000ef2	jne	0x100000ea8
+0000000100000ef4	movl	$0, -8(%rbp)
+0000000100000efb	movl	-8(%rbp), %eax
+0000000100000efe	movl	%eax, -4(%rbp)
+0000000100000f01	movl	-4(%rbp), %eax
+0000000100000f04	addq	$80, %rsp
+0000000100000f08	popq	%rbp
+0000000100000f09	ret
