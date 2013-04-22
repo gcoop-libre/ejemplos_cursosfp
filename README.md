@@ -1,5 +1,5 @@
-# Repositorio de ejemplos cursos de formacion profesional
+# Repositorio de ejemplos cursos de formación profesional
 
-Aqui se reunen todos los ejemplos de código que se muestran en las filminas.
+Aquí se reunen todos los ejemplos de código que se muestran en las filminas.
 
 
