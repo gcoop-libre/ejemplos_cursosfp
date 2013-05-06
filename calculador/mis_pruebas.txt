@@ -1,0 +1,33 @@
+Hola Mundo
+Esta es otra linea
+Hola Mundo
+Esta es otra linea
+cuenta: 2 + 2
+resultado: 4
+cuenta: 2 + 8
+resultado: 10
+cuenta: 2 + 2
+resultado: 4
+cuenta: (1 * 5) / 3
+resultado: 1
+cuenta: 25 + 12
+resultado: 37
+cuenta: 25 + 12
+resultado: 37
+cuenta: 25
+resultado: 25
+cuenta: 25
+resultado: 25
+cuenta: 25
+resultado: 25
+cuenta: 16 + 16
+resultado: 32
+cuenta: 16+16
+resultado: 32
+cuenta: 75 / 18
+resultado: 4
+cuenta: 16 / 5
+resultado: 3
+cuenta: a + 5
+cuenta: nombre_archivo
+resultado: mis_pruebas.txt
