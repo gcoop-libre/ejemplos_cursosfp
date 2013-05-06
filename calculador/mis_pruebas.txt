@@ -31,3 +31,34 @@ resultado: 3
 cuenta: a + 5
 cuenta: nombre_archivo
 resultado: mis_pruebas.txt
+Hola Mundo
+Esta es otra linea
+cuenta: 2 + 2
+resultado: 4
+[horacio] - cuenta: 2 + 8
+[horacio] - resultado: 10
+Hola Mundo
+Esta es otra linea
+cuenta: 2 + 2
+resultado: 4
+[horacio] - cuenta: 2 + 8
+[horacio] - resultado: 10
+cuenta: 16 / 2075
+resultado: 0
+cuenta: 16 / 2075
+resultado: 0
+cuenta: 16 / 2075
+resultado: 0
+[horacio] - cuenta: 16 / 2075
+[horacio] - resultado: 0
+[horacio] - cuenta: 300 * 8
+[horacio] - resultado: 2400
+[horacio] - cuenta: 300 * 8
+[horacio] - resultado: 2400
+[horacio] - cuenta: 16 + 16
+[horacio] - resultado: 32
+[joac] - cuenta: 16 / 4
+[joac] - resultado: 4
+[joac] - cuenta: test
+[joac] - cuenta: 5 / 16
+[joac] - resultado: 0

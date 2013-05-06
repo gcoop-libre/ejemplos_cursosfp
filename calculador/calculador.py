@@ -20,19 +20,40 @@ def leer_archivo():
     archivo.close()
     return lineas
 
-def hacer_cuenta(texto):
+def embellecer_nombre(nombre):
+    """convierto el nombre en algo como: '[mi nombre] - '"""
+    return  '[%s] - ' % nombre
+
+
+def cuentas_de_usuario(nombre):
+    salida = []
+    nombre = embellecer_nombre(nombre)
+    for linea in leer_archivo():
+        if linea.startswith(nombre):
+            #le saco el nombre
+            linea = linea.replace(nombre, '')
+            salida.append(linea)
+    return salida
+
+
+
+def hacer_cuenta(texto, nombre=''):
     """
     Hace una cuenta y la guarda en un archivo
     """
-    guardar_en_archivo('cuenta: %s' % texto)
+    if nombre:
+        nombre = embellecer_nombre(nombre)
+
+    guardar_en_archivo('%scuenta: %s' % (nombre, texto))
     # FIXME a veces esto se rompe ver como lo arreglamos :-/
     resultado = eval(texto)
-    guardar_en_archivo('resultado: %s' % resultado)
+    guardar_en_archivo('%sresultado: %s' % (nombre, resultado))
     return resultado
 
 if __name__ == '__main__':
     guardar_en_archivo('Hola Mundo')
     guardar_en_archivo('Esta es otra linea')
     hacer_cuenta('2 + 2')
-    hacer_cuenta('2 + 8')
+    hacer_cuenta('2 + 8', 'horacio')
+    print cuentas_de_usuario('horacio')
     print leer_archivo()
