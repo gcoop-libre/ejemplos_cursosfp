@@ -25,11 +25,10 @@ def hacer_cuenta(texto):
     Hace una cuenta y la guarda en un archivo
     """
     guardar_en_archivo('cuenta: %s' % texto)
+    # FIXME a veces esto se rompe ver como lo arreglamos :-/
     resultado = eval(texto)
     guardar_en_archivo('resultado: %s' % resultado)
     return resultado
-
-
 
 if __name__ == '__main__':
     guardar_en_archivo('Hola Mundo')
