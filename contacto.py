@@ -1,6 +1,4 @@
-
-
-
+import pickle
 
 class Contacto(object):
 
@@ -13,9 +11,10 @@ class Contacto(object):
         return "<Contacto %s %s>" % (self.nombre, self.apellido)
 
     def obtener_nombre_y_telefono(self):
-        return (self.nombre, self.telefono)
+        return self.nombre, self.telefono
 
 class Agenda(object):
+    archivo = 'mis_datos.pickle'
 
     def __init__(self):
         self.contactos = []
@@ -25,23 +24,14 @@ class Agenda(object):
             if contacto.nombre == nombre:
                 return contacto
 
+    def guardar(self):
+        """Guarde la lista de contactos en el archivo"""
+        fh = open(self.archivo, 'w')
+        pickle.dump(self.contactos, fh)
+        fh.close()
 
-agenda = Agenda()
-
-agenda.contactos = [
-    Contacto('Joaquin', 'Sorianello', '123123'),
-    Contacto('Alberto', 'Sorianello', '123123'),
-    Contacto('Nicolas', 'Sorianello', '123123'),
-]
-
-agenda.contactos.append(
-    Contacto('Sebastian', 'Sorianello', '123123')
-    )
-#############
-
-ct = agenda.buscar_por_nombre('Sebastian')
-
-nombre, telefono = ct.obtener_nombre_y_telefono()
-
-print nombre
-print telefono
+    def cargar(self):
+        """Obtiene los contactos desde un archivo"""
+        fh = open(self.archivo, 'r')
+        self.contactos = pickle.load(fh)
+        fh.close()
