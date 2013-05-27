@@ -25,20 +25,16 @@ class Agenda(object):
                 return contacto
 
 
+agenda = Agenda()
 
-contactos = [
-        Contacto('Joaquin', 'Sorianello', '123123'),
-        Contacto('Alberto', 'Sorianello', '123123'),
-        Contacto('Nicolas', 'Sorianello', '123123'),
-    ]
+agenda.contactos = [
+    Contacto('Joaquin', 'Sorianello', '123123'),
+    Contacto('Alberto', 'Sorianello', '123123'),
+    Contacto('Nicolas', 'Sorianello', '123123'),
+]
 
+agenda.contactos.append(
+    Contacto('Sebastian', 'Sorianello', '123123')
+    )
 
-def buscar_contacto(nombre):
-    for contacto in contactos:
-        if contacto.nombre == nombre:
-            return contacto
-
-
-print buscar_contacto('Nicolas').telefono
-print buscar_contacto('Foo').telefono
-
+print agenda.buscar_por('Sebastian')
