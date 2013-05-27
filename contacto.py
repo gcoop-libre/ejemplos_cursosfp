@@ -12,7 +12,8 @@ class Contacto(object):
     def __repr__(self):
         return "<Contacto %s %s>" % (self.nombre, self.apellido)
 
-
+    def obtener_nombre_y_telefono(self):
+        return (self.nombre, self.telefono)
 
 class Agenda(object):
 
@@ -20,7 +21,7 @@ class Agenda(object):
         self.contactos = []
 
     def buscar_por_nombre(self, nombre):
-        for contacto in contactos:
+        for contacto in self.contactos:
             if contacto.nombre == nombre:
                 return contacto
 
@@ -36,5 +37,11 @@ agenda.contactos = [
 agenda.contactos.append(
     Contacto('Sebastian', 'Sorianello', '123123')
     )
+#############
 
-print agenda.buscar_por('Sebastian')
+ct = agenda.buscar_por_nombre('Sebastian')
+
+nombre, telefono = ct.obtener_nombre_y_telefono()
+
+print nombre
+print telefono
