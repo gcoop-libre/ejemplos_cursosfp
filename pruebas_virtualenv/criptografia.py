@@ -1,4 +1,7 @@
+#Es pycrypto de PyPI
 from Crypto.Cipher import AES
+
+# modulos de la biblioteca estandar
 import base64
 import hashlib
 
@@ -12,19 +15,21 @@ def completar(cadena):
 clave = "mami te quiero"
 
 key = hashlib.sha256(clave).digest()
+print "Clave como sha: %s" % key
 print len(key)
 
 cifrador = AES.new(key)
-texto = 'Mi texto a encriptar'
+#texto = pickle.dumps(mi_objeto)
+texto = 'Mi texto a encriptar{'
 en_base_64 = base64.b64encode(texto)
-print en_base_64
+print "cadena como base 64: %s" % en_base_64
 
 resultado = cifrador.encrypt(completar(en_base_64))
 
-print resultado
+print "Cadena encriptada: %s" % resultado
 
 descifrado = cifrador.decrypt(resultado)
 
 print descifrado
 
-print base64.b64decode(descifrado).rstrip(PADDING)
+print base64.b64decode(descifrado.rstrip(PADDING))
